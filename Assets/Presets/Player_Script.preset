@@ -6,7 +6,7 @@ Preset:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: Player_Script
   m_TargetType:
     m_NativeTypeID: 114
     m_ManagedTypePPtr: {fileID: 11500000, guid: adf0818bc2dad493a9d8579f3a80a927, type: 3}
@@ -42,7 +42,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: jumpForceUp
-    value: 0.85
+    value: 0.92
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: jumpForceRight
@@ -65,6 +65,18 @@ Preset:
     value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: swingSpeed
+    value: 1.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: linePoints.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: line
+    value: 
+    objectReference: {fileID: 7511592449279862016, guid: 5dafd17fe0a32490ab44f9aafc839421, type: 3}
+  - target: {fileID: 0}
     propertyPath: waterLayer
     value: 
     objectReference: {fileID: 0}
@@ -75,5 +87,9 @@ Preset:
   - target: {fileID: 0}
     propertyPath: resistance
     value: -0.4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: hasFallen
+    value: 0
     objectReference: {fileID: 0}
   m_ExcludedProperties: []

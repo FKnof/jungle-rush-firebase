@@ -58,6 +58,7 @@ public class NewGenerator : MonoBehaviour
             
             //Plattform wird instanziiert
             GameObject platform = Instantiate(platformPrefabs[randomIndex], transform.position, Quaternion.identity);
+            platform.transform.parent = GameObject.Find("Platforms").transform;
             platform.GetComponent<Platforms>().player = player;
             platform.GetComponent<Platforms>().collect = collect;
             Collider2D platformCollider = platform.GetComponent<Collider2D>();
@@ -120,6 +121,7 @@ public class NewGenerator : MonoBehaviour
 
         collectorPosition = new Vector3(randomXposition, randomYposition, 0);
         GameObject collectorObject = Instantiate(collectorPrefab, collectorPosition, Quaternion.identity);
+        collectorObject.transform.parent = GameObject.Find("Platforms").transform;
         collectorObject.GetComponent<Platforms>().player = player;
         collectorObject.GetComponent<Platforms>().collect = collect;
 
