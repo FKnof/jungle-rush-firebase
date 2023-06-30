@@ -1,0 +1,209 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1526756103353781784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1526756103353781786}
+  - component: {fileID: 2833659986839714714}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1526756103353781786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526756103353781784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2833659986839714714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526756103353781784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564d3291083254abd9a33a19c70d043f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 1
+  mixerGroup: {fileID: 0}
+  sounds:
+  - name: Intro
+    clip: {fileID: 8300000, guid: 576b7c7e3adc14bc0bbe5f55bb611fff, type: 3}
+    volume: 0.75
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Level 1
+    clip: {fileID: 8300000, guid: 8afac9c35914a40e9a44bac168e8339c, type: 3}
+    volume: 0
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Level 2
+    clip: {fileID: 8300000, guid: abfc6f91a7ed5459cb37f2634422184c, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Level 3
+    clip: {fileID: 8300000, guid: 547d036252cee46fabe9816aed279471, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Level 4
+    clip: {fileID: 8300000, guid: 6a4ab75d2b380480994da9ed86f32286, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: b52c7fd3bdc75fb49b8c63608482d916, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Banana
+    clip: {fileID: 8300000, guid: e98fa4352823141448d643f19a37cbe8, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Button 1
+    clip: {fileID: 8300000, guid: a3316cba0702d0a46abe3f42d802fe1a, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Button 2
+    clip: {fileID: 8300000, guid: 08211bbc71599f340a3e9fb36ea11258, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Button 3
+    clip: {fileID: 8300000, guid: 1071ec78178964e4fac8248a24e8c62e, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Impact
+    clip: {fileID: 8300000, guid: 85a993c0d499b1a4c9b9d82ab4eecb23, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: ccb4c595f3ec2384f891bbc0cc5dd430, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Level Change
+    clip: {fileID: 8300000, guid: d97f7457c486e6c40af0c24d70f4cbfe, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Swing
+    clip: {fileID: 8300000, guid: 99cd8406a493d4d4b810aeefa13c7948, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Swing 2
+    clip: {fileID: 8300000, guid: 483e284a50afd854a9e99c1147e8aa09, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Wind
+    clip: {fileID: 8300000, guid: 81df582ea6e3b714487c8e6ae88554a7, type: 3}
+    volume: 1
+    volumeVariance: 0.428
+    playOnAwake: 0
+    pitch: 1
+    pitchVariance: 1
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
