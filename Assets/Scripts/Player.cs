@@ -95,71 +95,71 @@ public class Player : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
-        {
+        //if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        //{
 
-            jumpForceCurrent = jumpForceUp;
-            audioManager.Play("Jump");
-            rb.AddForce(new Vector2(0, 9f), ForceMode2D.Impulse);
-            isJumping = true;
-        }
-        //  Sprunghöhe durch Haltezeit bestimmen
-        if (Input.GetKey(KeyCode.Space) && isJumping == true)
-        {
-            if (jumpForceCurrent > 0)
-            {
+        //    jumpForceCurrent = jumpForceUp;
+        //    audioManager.Play("Jump");
+        //    rb.AddForce(new Vector2(0, 9f), ForceMode2D.Impulse);
+        //    isJumping = true;
+        //}
+        ////  Sprunghöhe durch Haltezeit bestimmen
+        //if (Input.GetKey(KeyCode.Space) && isJumping == true)
+        //{
+        //    if (jumpForceCurrent > 0)
+        //    {
 
-                jumpForceCurrent *= jumpReductionFactor;
-                rb.AddForce(new Vector2(0, jumpForceCurrent), ForceMode2D.Impulse);
+        //        jumpForceCurrent *= jumpReductionFactor;
+        //        rb.AddForce(new Vector2(0, jumpForceCurrent), ForceMode2D.Impulse);
 
-            }
-        }
-        else
-        {
-            isJumping = false;
-        }
+        //    }
+        //}
+        //else
+        //{
+        //    isJumping = false;
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Space) && isSwinging == false && !IsGrounded() && !hasFallen)
-        {
-            Vector2 distance = roof.ClosestPoint(transform.position);
-            float yDistance = distance.y - transform.position.y;
-            audioManager.Play("Swing");
-            hingeJoint = gameObject.AddComponent<DistanceJoint2D>();
-            hingeJoint.autoConfigureConnectedAnchor = false;
-            hingeJoint.connectedAnchor = new Vector2(transform.position.x + 2, transform.position.y + yDistance);
-            hingeJoint.anchor = new Vector2(0, 0);
-            hingeJoint.enableCollision = true;
-            hingeJoint.autoConfigureDistance = false;
+        //if (Input.GetKeyDown(KeyCode.Space) && isSwinging == false && !IsGrounded() && !hasFallen)
+        //{
+        //    Vector2 distance = roof.ClosestPoint(transform.position);
+        //    float yDistance = distance.y - transform.position.y;
+        //    audioManager.Play("Swing");
+        //    hingeJoint = gameObject.AddComponent<DistanceJoint2D>();
+        //    hingeJoint.autoConfigureConnectedAnchor = false;
+        //    hingeJoint.connectedAnchor = new Vector2(transform.position.x + 2, transform.position.y + yDistance);
+        //    hingeJoint.anchor = new Vector2(0, 0);
+        //    hingeJoint.enableCollision = true;
+        //    hingeJoint.autoConfigureDistance = false;
 
-            linePoints[0] = transform.position;
-            linePoints[1] = hingeJoint.connectedAnchor;
+        //    linePoints[0] = transform.position;
+        //    linePoints[1] = hingeJoint.connectedAnchor;
 
-            Instantiate(line);
-            lineController = GameObject.Find("LineRenderer(Clone)").GetComponent<LineController>();
-            lineController.SetUpLine(linePoints);
-            isJumping = false;
-            isSwinging = true;
+        //    Instantiate(line);
+        //    lineController = GameObject.Find("LineRenderer(Clone)").GetComponent<LineController>();
+        //    lineController.SetUpLine(linePoints);
+        //    isJumping = false;
+        //    isSwinging = true;
 
-        }
-        else if (Input.GetKey(KeyCode.Space) && isSwinging == true && hingeJoint != null)
-        {
+        //}
+        //else if (Input.GetKey(KeyCode.Space) && isSwinging == true && hingeJoint != null)
+        //{
 
-            hingeJoint.connectedAnchor += Vector2.left * 7f * Time.deltaTime;
-            linePoints[0] = transform.position;
-            linePoints[1] = hingeJoint.connectedAnchor;
-            lineController.SetUpLine(linePoints);
-            if (hingeJoint.connectedAnchor.x < -7 && hingeJoint != null)
-            {
-                Destroy(hingeJoint);
-                Destroy(GameObject.Find("LineRenderer(Clone)"));
-            }
-        }
-        else if (Input.GetKeyUp(KeyCode.Space) && isSwinging == true)
-        {
-            Destroy(hingeJoint);
-            Destroy(GameObject.Find("LineRenderer(Clone)"));
-            gameObject.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y, initialZRotation);
-        }
+        //    hingeJoint.connectedAnchor += Vector2.left * 7f * Time.deltaTime;
+        //    linePoints[0] = transform.position;
+        //    linePoints[1] = hingeJoint.connectedAnchor;
+        //    lineController.SetUpLine(linePoints);
+        //    if (hingeJoint.connectedAnchor.x < -7 && hingeJoint != null)
+        //    {
+        //        Destroy(hingeJoint);
+        //        Destroy(GameObject.Find("LineRenderer(Clone)"));
+        //    }
+        //}
+        //else if (Input.GetKeyUp(KeyCode.Space) && isSwinging == true)
+        //{
+        //    Destroy(hingeJoint);
+        //    Destroy(GameObject.Find("LineRenderer(Clone)"));
+        //    gameObject.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y, initialZRotation);
+        //}
         //-------
 
         /////////------------Touch Controls---------------------------------------------------------------------------------
@@ -242,81 +242,81 @@ public class Player : MonoBehaviour
         /////////------------Touch Controls---------------------------------------------------------------------------------
         ///
 
-        //if (Input.touchCount > 0)
-        //{
-        //    Touch touch = Input.GetTouch(0);
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
 
-        //    if (touch.phase == TouchPhase.Began && IsGrounded())
-        //    {
+            if (touch.phase == TouchPhase.Began && IsGrounded())
+            {
 
-        //        UnityEngine.Debug.Log("Jump");
-        //        jumpForceCurrent = jumpForceUp;
-        //        audioManager.Play("Jump");
-        //        rb.AddForce(new Vector2(0, 9f), ForceMode2D.Impulse);
-        //        isJumping = true;
-        //    }
-        //    //  Sprunghöhe durch Haltezeit bestimmen
+                UnityEngine.Debug.Log("Jump");
+                jumpForceCurrent = jumpForceUp;
+                audioManager.Play("Jump");
+                rb.AddForce(new Vector2(0, 9f), ForceMode2D.Impulse);
+                isJumping = true;
+            }
+            //  Sprunghöhe durch Haltezeit bestimmen
 
-        //    if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
-        //    {
-        //        if (isJumping == true && jumpForceCurrent > 0)
-        //        {
-        //            jumpForceCurrent *= jumpReductionFactor;
-        //            rb.AddForce(new Vector2(0, jumpForceCurrent), ForceMode2D.Impulse);
-        //        }
+            if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+            {
+                if (isJumping == true && jumpForceCurrent > 0)
+                {
+                    jumpForceCurrent *= jumpReductionFactor;
+                    rb.AddForce(new Vector2(0, jumpForceCurrent), ForceMode2D.Impulse);
+                }
 
-        //    }
-        //    if (touch.phase == TouchPhase.Ended && isJumping == true)
+            }
+            if (touch.phase == TouchPhase.Ended && isJumping == true)
 
-        //    {
-        //        isJumping = false;
-        //    }
+            {
+                isJumping = false;
+            }
 
-        //    if (touch.phase == TouchPhase.Began && isSwinging == false && !IsGrounded() && !hasFallen)
-        //    {
-        //        Vector2 distance = roof.ClosestPoint(transform.position);
-        //        float yDistance = distance.y - transform.position.y;
-        //        audioManager.Play("Swing");
-        //        hingeJoint = gameObject.AddComponent<DistanceJoint2D>();
-        //        hingeJoint.autoConfigureConnectedAnchor = false;
-        //        hingeJoint.connectedAnchor = new Vector2(transform.position.x + 2, transform.position.y + yDistance);
-        //        hingeJoint.anchor = new Vector2(0, 0);
-        //        hingeJoint.enableCollision = true;
-        //        hingeJoint.autoConfigureDistance = false;
+            if (touch.phase == TouchPhase.Began && isSwinging == false && !IsGrounded() && !hasFallen)
+            {
+                Vector2 distance = roof.ClosestPoint(transform.position);
+                float yDistance = distance.y - transform.position.y;
+                audioManager.Play("Swing");
+                hingeJoint = gameObject.AddComponent<DistanceJoint2D>();
+                hingeJoint.autoConfigureConnectedAnchor = false;
+                hingeJoint.connectedAnchor = new Vector2(transform.position.x + 2, transform.position.y + yDistance);
+                hingeJoint.anchor = new Vector2(0, 0);
+                hingeJoint.enableCollision = true;
+                hingeJoint.autoConfigureDistance = false;
 
-        //        linePoints[0] = transform.position;
-        //        linePoints[1] = hingeJoint.connectedAnchor;
+                linePoints[0] = transform.position;
+                linePoints[1] = hingeJoint.connectedAnchor;
 
-        //        Instantiate(line);
-        //        lineController = GameObject.Find("LineRenderer(Clone)").GetComponent<LineController>();
-        //        lineController.SetUpLine(linePoints);
-        //        isJumping = false;
-        //        isSwinging = true;
+                Instantiate(line);
+                lineController = GameObject.Find("LineRenderer(Clone)").GetComponent<LineController>();
+                lineController.SetUpLine(linePoints);
+                isJumping = false;
+                isSwinging = true;
 
-        //    }
-        //    else if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
-        //    {
-        //        if (isSwinging && hingeJoint != null)
-        //        {
-        //            hingeJoint.connectedAnchor += Vector2.left * 7f * Time.deltaTime;
-        //            linePoints[0] = transform.position;
-        //            linePoints[1] = hingeJoint.connectedAnchor;
-        //            lineController.SetUpLine(linePoints);
-        //            if (hingeJoint.connectedAnchor.x < -7 && hingeJoint != null)
-        //            {
-        //                Destroy(hingeJoint);
-        //                Destroy(GameObject.Find("LineRenderer(Clone)"));
-        //            }
-        //        }
+            }
+            else if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+            {
+                if (isSwinging && hingeJoint != null)
+                {
+                    hingeJoint.connectedAnchor += Vector2.left * 7f * Time.deltaTime;
+                    linePoints[0] = transform.position;
+                    linePoints[1] = hingeJoint.connectedAnchor;
+                    lineController.SetUpLine(linePoints);
+                    if (hingeJoint.connectedAnchor.x < -7 && hingeJoint != null)
+                    {
+                        Destroy(hingeJoint);
+                        Destroy(GameObject.Find("LineRenderer(Clone)"));
+                    }
+                }
 
-        //    }
-        //    else if (touch.phase == TouchPhase.Ended && isSwinging == true)
-        //    {
-        //        Destroy(hingeJoint);
-        //        Destroy(GameObject.Find("LineRenderer(Clone)"));
-        //        gameObject.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y, initialZRotation);
-        //    }
-        //}
+            }
+            else if (touch.phase == TouchPhase.Ended && isSwinging == true)
+            {
+                Destroy(hingeJoint);
+                Destroy(GameObject.Find("LineRenderer(Clone)"));
+                gameObject.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y, initialZRotation);
+            }
+        }
 
         if (IsGrounded())
             {

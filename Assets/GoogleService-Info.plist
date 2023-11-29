@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBg5zZFWaDq3vtTfLDv9VilAnqPuyxKP2g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>658935141843</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.knof.junglerush</string>
+	<key>PROJECT_ID</key>
+	<string>jungle-rush-169ee</string>
+	<key>STORAGE_BUCKET</key>
+	<string>jungle-rush-169ee.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:658935141843:ios:28b924aaa5576128050b26</string>
+</dict>
+</plist>

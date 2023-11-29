@@ -1,0 +1,31 @@
+{
+  "project_info": {
+    "project_number": "658935141843",
+    "project_id": "jungle-rush-169ee",
+    "storage_bucket": "jungle-rush-169ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658935141843:ios:28b924aaa5576128050b26",
+        "android_client_info": {
+          "package_name": "com.knof.junglerush"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg5zZFWaDq3vtTfLDv9VilAnqPuyxKP2g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
